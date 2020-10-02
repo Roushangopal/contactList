@@ -1,0 +1,28 @@
+<h2 style="text-align: center;">Add Contacts</h2>
+<div style="text-align: center;">
+<form (submit)="addContact()">
+    <label>First Name : </label>
+    <input [(ngModel)]="firstName" name="firstName"/>
+    <br><br>
+    <label>Last Name : </label>
+    <input [(ngModel)]="lastName" name="lastName"/>
+    <br><br>
+    <label>Phone No : </label>
+    <input [(ngModel)]="phone" name="phone"/>
+    <br><br>
+    <input type="submit"/>
+    <hr>
+</form>
+</div>
+<div *ngFor = "let contact of contacts" style="text-align: center;">
+    {{contact.firstName}}
+    {{contact.lastName}} <span>-</span>
+    {{contact.phone}}
+    <button (click)="deleteContact(contact._id)">DELETE</button>
+    <br><br>
+</div>
+
+
+
+
+
